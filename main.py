@@ -1,16 +1,54 @@
-
 #! /usr/bin/python
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow,
+                             QVBoxLayout, QTabWidget, QPushButton)
+
+class App(QMainWindow):
+
+    def __init__(self):
+        super().__init__()
+        self.title = 'Yendor'
+        self.left = 10
+        self.top = 10
+        self.width = 640
+        self.height = 480
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle(self.title)
+        self.setGeometry(self.left, self.top, self.width, self.height)
+        self.table_widget = TableWidget(self)
+        self.setCentralWidget(self.table_widget)
+        self.show()
+
+class TableWidget(QWidget):
+
+    def __init__(self, parent):
+        super(TableWidget, self).__init__(parent)
+        self.layout = QVBoxLayout(self)
+
+        self.tabs = QTabWidget()
+        self.tab1 = QWidget()
+        self.tab2 = QWidget()
+        self.tab3 = QWidget()
+        self.tab4 = QWidget()
+
+        self.tabs.addTab(self.tab1, "NPCs")
+        self.tabs.addTab(self.tab2, "Places")
+        self.tabs.addTab(self.tab3, "Items")
+        self.tabs.addTab(self.tab4, "Premise")
+
+        self.tab1.layout = QVBoxLayout(self)
+        self.pushButton1 = QPushButton("PyQt5 button")
+        self.tab1.layout.addWidget(self.pushButton1)
+        self.tab1.setLayout(self.tab1.layout)
+
+        # Add tabs to widget
+        self.layout.addWidget(self.tabs)
+        self.setLayout(self.layout)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    w = QWidget()
-    w.resize(250, 150)
-    w.move(300, 300)
-    w.setWindowTitle('Yendor')
-    w.show()
-    # label = QLabel('Hello World!')
-    # label.show()
-
+    ex = App()
     sys.exit(app.exec_())
