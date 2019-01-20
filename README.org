@@ -3,4 +3,4 @@
 
 *** DONE Get project on GitHub
 *** DONE Set up README
-*** TODO Get tabs working
+*** DONE Get tabs working
