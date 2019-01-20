@@ -1,7 +1,12 @@
 #! /usr/bin/python
 import sys
 from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow,
-                             QVBoxLayout, QTabWidget, QPushButton)
+                             QVBoxLayout, QHBoxLayout, QTabWidget,
+                             QRadioButton)
+
+# pylint: disable=too-many-instance-attributes
+# muting this until I learn how to sequester different
+# aspects of the UI into different classes/files
 
 class App(QMainWindow):
 
@@ -27,21 +32,38 @@ class TableWidget(QWidget):
         super(TableWidget, self).__init__(parent)
         self.layout = QVBoxLayout(self)
 
+        # List of tabs and their names
         self.tabs = QTabWidget()
         self.tab1 = QWidget()
         self.tab2 = QWidget()
         self.tab3 = QWidget()
         self.tab4 = QWidget()
-
         self.tabs.addTab(self.tab1, "NPCs")
         self.tabs.addTab(self.tab2, "Places")
         self.tabs.addTab(self.tab3, "Items")
         self.tabs.addTab(self.tab4, "Premise")
 
-        self.tab1.layout = QVBoxLayout(self)
-        self.pushButton1 = QPushButton("PyQt5 button")
-        self.tab1.layout.addWidget(self.pushButton1)
+        # Contents of tabs
+        ## NPC tab (tab1)
+        self.tab1.layout = QHBoxLayout(self)
+
+        ### Peaceful radio button
+        self.aggroRadio1 = QRadioButton("Peaceful")
+        self.aggroRadio1.setChecked(True)
+        self.tab1.layout.addWidget(self.aggroRadio1)
+
+        ### Aggro radio button
+        self.aggroRadio2 = QRadioButton("Aggro")
+        self.aggroRadio1.setChecked(False)
+        self.tab1.layout.addWidget(self.aggroRadio2)
+
         self.tab1.setLayout(self.tab1.layout)
+
+        ## Places tab (tab2)
+
+        ## Items tab (tab3)
+
+        ## Premise tab (tab4)
 
         # Add tabs to widget
         self.layout.addWidget(self.tabs)
