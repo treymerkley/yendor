@@ -2,7 +2,7 @@
 import sys
 from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow,
                              QVBoxLayout, QHBoxLayout, QTabWidget,
-                             QRadioButton)
+                             QRadioButton, QComboBox)
 
 # pylint: disable=too-many-instance-attributes
 # muting this until I learn how to sequester different
@@ -47,17 +47,20 @@ class TableWidget(QWidget):
         ## NPC tab (tab1)
         self.tab1.layout = QHBoxLayout(self)
 
-        ### Peaceful radio button
-        self.aggroRadio1 = QRadioButton("Peaceful")
-        self.aggroRadio1.setChecked(True)
-        self.tab1.layout.addWidget(self.aggroRadio1)
+        self.speciesComboBox = QComboBox()
+        listOfSpecies = ('Dragonborn', 'Dwarf', 'Eldarin', 'Elf',
+                         'Halfling', 'Human', 'Tiefling', 'Goblin')
+        self.speciesComboBox.addItems(listOfSpecies)
 
-        ### Aggro radio button
-        self.aggroRadio2 = QRadioButton("Aggro")
-        self.aggroRadio1.setChecked(False)
-        self.tab1.layout.addWidget(self.aggroRadio2)
+        self.levelComboBox = QComboBox()
+        for i in range(1, 30):
+            self.levelComboBox.addItem(i)
+            i += 1
 
-        self.tab1.setLayout(self.tab1.layout)
+        self.classesComboBox = QComboBox()
+        listOfClasses = ('Fighter', 'Rogue', 'Mage', 'Cleric')
+        self.classesComboBox.addItems(listOfClasses)
+
 
         ## Places tab (tab2)
 
