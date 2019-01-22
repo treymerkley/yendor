@@ -53,14 +53,21 @@ class TableWidget(QWidget):
         self.speciesComboBox.addItems(listOfSpecies)
 
         self.levelComboBox = QComboBox()
-        for i in range(1, 30):
-            self.levelComboBox.addItem(i)
+        for i in range(1, 31):
+            self.levelComboBox.addItem(str(i))
             i += 1
 
         self.classesComboBox = QComboBox()
         listOfClasses = ('Fighter', 'Rogue', 'Mage', 'Cleric')
         self.classesComboBox.addItems(listOfClasses)
 
+        # adding widgets to layout
+        self.tab1.layout.addWidget(self.levelComboBox)
+        self.tab1.layout.addWidget(self.speciesComboBox)
+        self.tab1.layout.addWidget(self.classesComboBox)
+
+        # adding layout to tab
+        self.tab1.setLayout(self.tab1.layout)
 
         ## Places tab (tab2)
 
