@@ -2,7 +2,7 @@
 import sys
 from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow,
                              QVBoxLayout, QHBoxLayout, QTabWidget,
-                             QRadioButton, QComboBox)
+                             QComboBox)
 
 # pylint: disable=too-many-instance-attributes
 # muting this until I learn how to sequester different
@@ -70,10 +70,16 @@ class TableWidget(QWidget):
         self.tab1.setLayout(self.tab1.layout)
 
         ## Places tab (tab2)
+        self.tab2.layout = QHBoxLayout(self)
+        self.tab2.setLayout(self.tab2.layout)
 
         ## Items tab (tab3)
+        self.tab3.layout = QHBoxLayout(self)
+        self.tab3.setLayout(self.tab3.layout)
 
         ## Premise tab (tab4)
+        self.tab4.layout = QHBoxLayout(self)
+        self.tab4.setLayout(self.tab4.layout)
 
         # Add tabs to widget
         self.layout.addWidget(self.tabs)
