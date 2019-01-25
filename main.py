@@ -2,7 +2,7 @@
 import sys
 from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow,
                              QVBoxLayout, QHBoxLayout, QTabWidget,
-                             QComboBox)
+                             QComboBox, QCheckBox, QLabel)
 
 # pylint: disable=too-many-instance-attributes
 # muting this until I learn how to sequester different
@@ -47,24 +47,39 @@ class TableWidget(QWidget):
         ## NPC tab (tab1)
         self.tab1.layout = QHBoxLayout(self)
 
+        self.speciesComboBoxLabel = QLabel()
+        self.speciesComboBoxLabel.setText("Species")
         self.speciesComboBox = QComboBox()
         listOfSpecies = ('Dragonborn', 'Dwarf', 'Eldarin', 'Elf',
                          'Halfling', 'Human', 'Tiefling', 'Goblin')
         self.speciesComboBox.addItems(listOfSpecies)
 
+        self.levelComboBoxLabel = QLabel()
+        self.levelComboBoxLabel.setText("Level")
         self.levelComboBox = QComboBox()
         for i in range(1, 31):
             self.levelComboBox.addItem(str(i))
             i += 1
 
+        self.classesComboBoxLabel = QLabel()
+        self.classesComboBoxLabel.setText("Class")
         self.classesComboBox = QComboBox()
         listOfClasses = ('Fighter', 'Rogue', 'Mage', 'Cleric')
         self.classesComboBox.addItems(listOfClasses)
 
+        self.elderCheckBoxLabel = QLabel()
+        self.elderCheckBoxLabel.setText("Elder")
+        self.elderCheckBox = QCheckBox()
+
         # adding widgets to layout
+        self.tab1.layout.addWidget(self.levelComboBoxLabel)
         self.tab1.layout.addWidget(self.levelComboBox)
+        self.tab1.layout.addWidget(self.speciesComboBoxLabel)
         self.tab1.layout.addWidget(self.speciesComboBox)
+        self.tab1.layout.addWidget(self.classesComboBoxLabel)
         self.tab1.layout.addWidget(self.classesComboBox)
+        self.tab1.layout.addWidget(self.elderCheckBoxLabel)
+        self.tab1.layout.addWidget(self.elderCheckBox)
 
         # adding layout to tab
         self.tab1.setLayout(self.tab1.layout)
