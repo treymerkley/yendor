@@ -1,28 +1,48 @@
 import sys
 from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow,
-                             QVBoxLayout, QHBoxLayout, QTabWidget,
-                             QComboBox, QCheckBox, QLabel)
+                             QVBoxLayout, QTabWidget)
+import gui
 
-app = QApplication(sys.argv)
-from yendor import gui
+class App(QMainWindow):
 
-layout = QVBoxLayout()
+    def __init__(self):
+        super().__init__()
+        self.title = 'Yendor'
+        self.left = 10
+        self.top = 10
+        self.width = 640
+        self.height = 480
+        self.initUI()
 
-# List of tabs and their names
-tabs = QTabWidget()
-tab1 = QWidget()
-tab2 = QWidget()
-tab3 = QWidget()
-tab4 = QWidget()
+    def initUI(self):
+        self.setWindowTitle(self.title)
+        self.setGeometry(self.left, self.top, self.width, self.height)
+        self.table_widget = TableWidget(self)
+        self.setCentralWidget(self.table_widget)
+        self.show()
 
-tabs.addTab(tab1, "NPCs")
-tabs.addTab(tab2, "Places")
-tabs.addTab(tab3, "Items")
-tabs.addTab(tab4, "Premise")
+class TableWidget(QWidget):
+    def __init__(self, parent):
+        super(TableWidget, self).__init__(parent)
+        self.layout = QVBoxLayout(self)
 
-tab1.layout = gui.npc.tab()
-tab2.layout = gui.places.tab()
-tab3.layout = gui.items.tab()
-tab4.layout = gui.premise.tab()
+    # List of tabs and their names
+        self.tabs = QTabWidget()
+        self.tab1 = QWidget()
+        self.tab2 = QWidget()
+        self.tab3 = QWidget()
+        self.tab4 = QWidget()
+        self.tabs.addTab(self.tab1, "NPCs")
+        self.tabs.addTab(self.tab2, "Places")
+        self.tabs.addTab(self.tab3, "Items")
+        self.tabs.addTab(self.tab4, "Premise")
 
-sys.exit(app.exec_())
+        self.tab1.setLayout = gui.npc.tab()
+        self.tab2.setLayout = gui.places.tab()
+        self.tab3.setLayout = gui.items.tab()
+        self.tab4.setLayout = gui.premise.tab()
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = App()
+    sys.exit(app.exec_())
