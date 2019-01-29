@@ -35,3 +35,5 @@ def tab():
     tab.layout.addWidget(classesComboBox)
     tab.layout.addWidget(elderCheckBoxLabel)
     tab.layout.addWidget(elderCheckBox)
+
+tab()

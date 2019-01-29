@@ -1,7 +1,8 @@
+
 import sys
 from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow,
                              QVBoxLayout, QTabWidget)
-import gui
+from gui import npc, places, items, premise
 
 class App(QMainWindow):
 
@@ -37,10 +38,10 @@ class TableWidget(QWidget):
         self.tabs.addTab(self.tab3, "Items")
         self.tabs.addTab(self.tab4, "Premise")
 
-        self.tab1.setLayout = gui.npc.tab()
-        self.tab2.setLayout = gui.places.tab()
-        self.tab3.setLayout = gui.items.tab()
-        self.tab4.setLayout = gui.premise.tab()
+        self.tab1.setLayout = npc.tab()
+        self.tab2.setLayout = places.tab()
+        self.tab3.setLayout = items.tab()
+        self.tab4.setLayout = premise.tab()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
