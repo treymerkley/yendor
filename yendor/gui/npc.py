@@ -21,7 +21,7 @@ def tab():
     classesComboBox = QComboBox()
     listOfClasses = ('Fighter', 'Rogue', 'Mage', 'Cleric')
     classesComboBox.addItems(listOfClasses)
-    
+
     elderCheckBoxLabel = QLabel()
     elderCheckBoxLabel.setText("Elder")
     elderCheckBox = QCheckBox()
@@ -36,4 +36,4 @@ def tab():
     tab.layout.addWidget(elderCheckBoxLabel)
     tab.layout.addWidget(elderCheckBox)
 
-tab()
+    return tab.layout
