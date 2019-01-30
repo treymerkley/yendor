@@ -2,3 +2,5 @@
 __pycache__
 test.py
 \#**\#
+/**/.mypy_cache/
+/**/__pycache__
