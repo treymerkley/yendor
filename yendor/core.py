@@ -1,9 +1,9 @@
 #! /usr/bin/python
 import sys
+
 from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow,
                              QVBoxLayout, QTabWidget)
-from gui import npc, places, items, premise
-
+from .gui import npc, places, items, premise
 
 class App(QMainWindow):
 
@@ -22,6 +22,7 @@ class App(QMainWindow):
         self.table_widget = TableWidget(self)
         self.setCentralWidget(self.table_widget)
         self.show()
+
 
 class TableWidget(QWidget):
 
@@ -44,12 +45,14 @@ class TableWidget(QWidget):
         self.tab2.setLayout(places.tab())
         self.tab3.setLayout(items.tab())
         self.tab4.setLayout(premise.tab())
-
+        
         # Add tabs to widget
         self.layout.addWidget(self.tabs)
         self.setLayout(self.layout)
 
-if __name__ == '__main__':
+
+
+def main():
     app = QApplication(sys.argv)
     ex = App()
-sys.exit(app.exec_())
+    sys.exit(app.exec_())

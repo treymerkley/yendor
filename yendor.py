@@ -1,7 +1,5 @@
 #!/usr/bin/python
-
 import sys
-import yendor.core
+from yendor import core
 
-if __name__ == '__main__':
-    core.main()
+core.main()
