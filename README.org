@@ -1,6 +1,0 @@
-#+TITLE: Yendor
-** An automatic, hackable dungeon master assistant
-
-*** DONE Get project on GitHub
-*** DONE Set up README
-*** DONE Get tabs working
