@@ -1,10 +1,11 @@
-from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout, QComboBox, QCheckBox, QLabel)
+from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout,
+                             QComboBox, QCheckBox, QLabel)
 def tab():
     # Initializing the complete layout
     tab.layout = QVBoxLayout()
 
-    # The list of species to choose from. Change the values in the listOfSpecies list to get
-    # different results on the page.
+    # The list of species to choose from. Change the values in the listOfSpecies
+    # list to get different results on the page.
     speciesComboBoxLabel = QLabel()
     speciesComboBoxLabel.setText("Species: ")
     speciesComboBox = QComboBox()
@@ -12,8 +13,8 @@ def tab():
                      'Halfling', 'Human', 'Tiefling', 'Goblin')
     speciesComboBox.addItems(listOfSpecies)
 
-    # This sets up the level scaling for the resulting character. The current cap is at 30,
-    # but the algorithm should continue to function to any level.
+    # This sets up the level scaling for the resulting character. The current
+    # cap is at 30, but the algorithm should continue to function to any level.
     levelComboBoxLabel = QLabel()
     levelComboBoxLabel.setText("Level: ")
     levelComboBox = QComboBox()
@@ -33,9 +34,9 @@ def tab():
     # This is a toggle modifier to increase the strength of the monster and the
     # loot it's carrying. It's entirely optional and can be removed, or the
     # strength of the modifier can be changed in the "math" folder.
-    elderCheckBoxLabel = QLabel()
-    elderCheckBoxLabel.setText("Elder: ")
-    elderCheckBox = QCheckBox()
+    bossCheckBoxLabel = QLabel()
+    bossCheckBoxLabel.setText("Boss: ")
+    bossCheckBox = QCheckBox()
 
     # This creates the layout for the controls. Any new fields should
     # follow this same general convention.
@@ -46,8 +47,8 @@ def tab():
     controls.addWidget(speciesComboBox)
     controls.addWidget(classesComboBoxLabel)
     controls.addWidget(classesComboBox)
-    controls.addWidget(elderCheckBoxLabel)
-    controls.addWidget(elderCheckBox)
+    controls.addWidget(bossCheckBoxLabel)
+    controls.addWidget(bossCheckBox)
 
     tab.layout.addLayout(controls)
 
