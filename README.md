@@ -1,3 +1,4 @@
+
 # Yendor
 ## An automatic, hackable dungeon master assistant
 
@@ -9,5 +10,5 @@ Yendor is built to accommodate D20, high-fantasy settings, but can be modified t
 
 ## Installation
 
-Clone or download the repository and run `yendor.py`, and you're set! Yendor requires Python 3.
+Yendor has a few prerequisites. Make sure that Python 3 is installed, and then install PyQt5, either by pip or your package manager. After that, clone or download the repository and run `yendor.py`, and you're set!
 
