@@ -50,6 +50,8 @@ def tab():
     controls.addWidget(bossCheckBoxLabel)
     controls.addWidget(bossCheckBox)
 
+    # Adds all of the disparate groups of controls to the total layout
     tab.layout.addLayout(controls)
 
+    # sends the layout to core.py
     return tab.layout
