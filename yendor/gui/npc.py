@@ -1,6 +1,8 @@
 #! /usr/bin/python3
 from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout,
-                             QComboBox, QCheckBox, QLabel)
+                             QComboBox, QCheckBox, QLabel,
+                             QPushButton)
+
 def tab():
     # Initializing the complete layout
     tab.layout = QVBoxLayout()
@@ -39,6 +41,20 @@ def tab():
     bossCheckBoxLabel.setText("Boss: ")
     bossCheckBox = QCheckBox()
 
+    # These are the buttons for saving and generating new NPCs.
+
+    generateButton = QPushButton("Generate")
+    saveButton = QPushButton("Save")
+
+    lowerRightButtonsHorizontal = QHBoxLayout()
+    lowerRightButtonsHorizontal.addStretch(1)
+    lowerRightButtonsHorizontal.addWidget(generateButton)
+    lowerRightButtonsHorizontal.addWidget(saveButton)
+
+    lowerRightButtonsVertical = QVBoxLayout()
+    lowerRightButtonsVertical.addStretch(1)
+    lowerRightButtonsVertical.addLayout(lowerRightButtonsHorizontal)
+
     # This creates the layout for the controls. Any new fields should
     # follow this same general convention.
     controls = QHBoxLayout()
@@ -53,6 +69,7 @@ def tab():
 
     # Adds all of the disparate groups of controls to the total layout
     tab.layout.addLayout(controls)
+    tab.layout.addLayout(lowerRightButtonsVertical)
 
     # sends the layout to core.py
     return tab.layout
