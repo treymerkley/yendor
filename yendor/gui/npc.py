@@ -1,4 +1,3 @@
-
 #! /usr/bin/python3
 from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout,
                              QComboBox, QCheckBox, QLabel,
