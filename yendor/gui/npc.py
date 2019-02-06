@@ -40,7 +40,7 @@ def tab():
     elementsComboBox = QComboBox()
     listOfElements = ('Air', 'Earth', 'Water', 'Fire', 'Forest')
     elementsComboBox.addItems(listOfElements)
-    
+
     # This is a toggle modifier to increase the strength of the monster and the
     # loot it's carrying. It's entirely optional and can be removed, or the
     # strength of the modifier can be changed in the "math" folder.

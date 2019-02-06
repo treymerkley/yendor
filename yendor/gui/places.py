@@ -1,6 +1,6 @@
 #! /usr/bin/python3
 from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout, QComboBox,
-                             QLabel, QPushButton, QTextEdit)
+                             QLabel, QPushButton, QTextEdit, QCheckBox)
 
 def tab():
     # Initializing the complete layout
@@ -21,6 +21,11 @@ def tab():
     elementsComboBox = QComboBox()
     listOfElements = ('Plains', 'Mountain', 'Wetland', 'Volcano', 'Forest')
     elementsComboBox.addItems(listOfElements)
+
+    # Toggle for hostile area
+    hostileCheckBoxLabel = QLabel()
+    hostileCheckBoxLabel.setText("Hostile:")
+    hostileCheckBox = QCheckBox()
 
     # These are the buttons for saving and generating new NPCs.
     generateButton = QPushButton("Generate")
@@ -43,6 +48,8 @@ def tab():
     controls.addWidget(placesComboBox)
     controls.addWidget(elementsComboBoxLabel)
     controls.addWidget(elementsComboBox)
+    controls.addWidget(hostileCheckBoxLabel)
+    controls.addWidget(hostileCheckBox)
 
     # Adds all of the disparate groups of controls to the total layout
     tab.layout.addLayout(controls)
