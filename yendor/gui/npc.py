@@ -1,7 +1,8 @@
 #! /usr/bin/python3
+from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout,
                              QComboBox, QCheckBox, QLabel,
-                             QPushButton, QTextEdit)
+                             QPushButton, QTextEdit, QScrollArea,)
 
 def tab():
     # Initializing the complete layout
@@ -13,7 +14,8 @@ def tab():
     speciesComboBoxLabel.setText("Species:")
     speciesComboBox = QComboBox()
     listOfSpecies = ('Dragonborn', 'Dwarf', 'Eldarin', 'Elf',
-                     'Halfling', 'Human', 'Tiefling', 'Goblin')
+                     'Halfling', 'Human', 'Tiefling', 'Goblin',
+                     'Slime', 'Random Appropriate Monster')
     speciesComboBox.addItems(listOfSpecies)
 
     # This sets up the level scaling for the resulting character. The current
@@ -66,20 +68,27 @@ def tab():
 
     # This creates the layout for the controls. Any new fields should
     # follow this same general convention.
-    controls = QHBoxLayout()
-    controls.addWidget(levelComboBoxLabel)
-    controls.addWidget(levelComboBox)
-    controls.addWidget(speciesComboBoxLabel)
-    controls.addWidget(speciesComboBox)
-    controls.addWidget(classesComboBoxLabel)
-    controls.addWidget(classesComboBox)
-    controls.addWidget(elementsComboBoxLabel)
-    controls.addWidget(elementsComboBox)
-    controls.addWidget(bossCheckBoxLabel)
-    controls.addWidget(bossCheckBox)
+    controls = QScrollArea()
+    controls.setFixedHeight(70)
+    controls.setWidgetResizable(False)
+    controls.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
+    controlsLayout = QHBoxLayout(controls)
 
+    controls.setWidget(controlsLayout.widget())
+
+    controlsLayout.addWidget(levelComboBoxLabel)
+    controlsLayout.addWidget(levelComboBox)
+    controlsLayout.addWidget(speciesComboBoxLabel)
+    controlsLayout.addWidget(speciesComboBox)
+    controlsLayout.addWidget(classesComboBoxLabel)
+    controlsLayout.addWidget(classesComboBox)
+    controlsLayout.addWidget(elementsComboBoxLabel)
+    controlsLayout.addWidget(elementsComboBox)
+    controlsLayout.addWidget(bossCheckBoxLabel)
+    controlsLayout.addWidget(bossCheckBox)
+ 
     # Adds all of the disparate groups of controls to the total layout
-    tab.layout.addLayout(controls)
+    tab.layout.addWidget(controls)
     tab.layout.addLayout(textBoxLayout)
     tab.layout.addLayout(bottomButtonsLayout)
 
