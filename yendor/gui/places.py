@@ -1,6 +1,7 @@
 #! /usr/bin/python3
 from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout, QComboBox,
-                             QLabel, QPushButton, QTextEdit, QCheckBox)
+                             QLabel, QPushButton, QTextEdit,
+                             QCheckBox, QScrollArea)
 
 def tab():
     # Initializing the complete layout
@@ -41,18 +42,23 @@ def tab():
     textBoxLayout = QHBoxLayout()
     textBoxLayout.addWidget(mainTextBox)
 
+    controls = QScrollArea()
+    controls.setFixedHeight(100)
+    controls.setWidgetResizable(False)
+    controlsLayout = QHBoxLayout(controls)
+
     # This creates the layout for the controls. Any new fields should
     # follow this same general convention.
-    controls = QHBoxLayout()
-    controls.addWidget(placesComboBoxLabel)
-    controls.addWidget(placesComboBox)
-    controls.addWidget(elementsComboBoxLabel)
-    controls.addWidget(elementsComboBox)
-    controls.addWidget(hostileCheckBoxLabel)
-    controls.addWidget(hostileCheckBox)
+    controls.setWidget(controlsLayout.widget())
+    controlsLayout.addWidget(placesComboBoxLabel)
+    controlsLayout.addWidget(placesComboBox)
+    controlsLayout.addWidget(elementsComboBoxLabel)
+    controlsLayout.addWidget(elementsComboBox)
+    controlsLayout.addWidget(hostileCheckBoxLabel)
+    controlsLayout.addWidget(hostileCheckBox)
 
     # Adds all of the disparate groups of controls to the total layout
-    tab.layout.addLayout(controls)
+    tab.layout.addWidget(controls)
     tab.layout.addLayout(textBoxLayout)
     tab.layout.addLayout(bottomButtonsLayout)
 

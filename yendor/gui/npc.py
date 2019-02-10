@@ -1,5 +1,4 @@
 #! /usr/bin/python3
-from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout,
                              QComboBox, QCheckBox, QLabel,
                              QPushButton, QTextEdit, QScrollArea,)
@@ -69,9 +68,8 @@ def tab():
     # This creates the layout for the controls. Any new fields should
     # follow this same general convention.
     controls = QScrollArea()
-    controls.setFixedHeight(70)
+    controls.setFixedHeight(100)
     controls.setWidgetResizable(False)
-    controls.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
     controlsLayout = QHBoxLayout(controls)
 
     controls.setWidget(controlsLayout.widget())
@@ -86,7 +84,7 @@ def tab():
     controlsLayout.addWidget(elementsComboBox)
     controlsLayout.addWidget(bossCheckBoxLabel)
     controlsLayout.addWidget(bossCheckBox)
- 
+
     # Adds all of the disparate groups of controls to the total layout
     tab.layout.addWidget(controls)
     tab.layout.addLayout(textBoxLayout)

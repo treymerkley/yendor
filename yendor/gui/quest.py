@@ -1,6 +1,7 @@
 #! /usr/bin/python3
 from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout, QComboBox,
-                             QLabel, QPushButton, QTextEdit)
+                             QLabel, QPushButton, QTextEdit,
+                             QScrollArea)
 
 def tab():
     # Initializing the complete layout
@@ -41,16 +42,21 @@ def tab():
     textBoxLayout = QHBoxLayout()
     textBoxLayout.addWidget(mainTextBox)
 
+    controls = QScrollArea()
+    controls.setFixedHeight(100)
+    controls.setWidgetResizable(False)
+    controlsLayout = QHBoxLayout(controls)
+
     # This creates the layout for the controls. Any new fields should
     # follow this same general convention.
-    controls = QHBoxLayout()
-    controls.addWidget(levelComboBoxLabel)
-    controls.addWidget(levelComboBox)
-    controls.addWidget(plotComboBoxLabel)
-    controls.addWidget(plotComboBox)
+    controls.setWidget(controlsLayout.widget())
+    controlsLayout.addWidget(levelComboBoxLabel)
+    controlsLayout.addWidget(levelComboBox)
+    controlsLayout.addWidget(plotComboBoxLabel)
+    controlsLayout.addWidget(plotComboBox)
 
     # Adds all of the disparate groups of controls to the total layout
-    tab.layout.addLayout(controls)
+    tab.layout.addWidget(controls)
     tab.layout.addLayout(textBoxLayout)
     tab.layout.addLayout(bottomButtonsLayout)
 

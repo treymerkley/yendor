@@ -1,6 +1,7 @@
 #! /usr/bin/python3
 from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout, QComboBox,
-                             QLabel, QPushButton, QTextEdit)
+                             QLabel, QPushButton, QTextEdit,
+                             QScrollArea)
 
 def tab():
     # Initializing the complete layout
@@ -40,23 +41,30 @@ def tab():
     bottomButtonsLayout.addWidget(generateButton)
     bottomButtonsLayout.addWidget(saveButton)
 
-    # This builds the textbox that you see the resulting character in
+    # This builds the textbox that you see the resulting item in
     mainTextBox = QTextEdit()
     textBoxLayout = QHBoxLayout()
     textBoxLayout.addWidget(mainTextBox)
 
     # This creates the layout for the controls. Any new fields should
     # follow this same general convention.
-    controls = QHBoxLayout()
-    controls.addWidget(itemsComboBoxLabel)
-    controls.addWidget(itemsComboBox)
-    controls.addWidget(buffsComboBoxLabel)
-    controls.addWidget(buffsComboBox)
-    controls.addWidget(debuffsComboBoxLabel)
-    controls.addWidget(debuffsComboBox)
+    controls = QScrollArea()
+    controls.setFixedHeight(100)
+    controls.setWidgetResizable(False)
+    # controls.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
+    controlsLayout = QHBoxLayout(controls)
+
+    controls.setWidget(controlsLayout.widget())
+
+    controlsLayout.addWidget(itemsComboBoxLabel)
+    controlsLayout.addWidget(itemsComboBox)
+    controlsLayout.addWidget(buffsComboBoxLabel)
+    controlsLayout.addWidget(buffsComboBox)
+    controlsLayout.addWidget(debuffsComboBoxLabel)
+    controlsLayout.addWidget(debuffsComboBox)
 
     # Adds all of the disparate groups of controls to the total layout
-    tab.layout.addLayout(controls)
+    tab.layout.addWidget(controls)
     tab.layout.addLayout(textBoxLayout)
     tab.layout.addLayout(bottomButtonsLayout)
 
