@@ -3,6 +3,8 @@ from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout,
                              QComboBox, QCheckBox, QLabel,
                              QPushButton, QTextEdit, QScrollArea,)
 
+from ..math import charactergen
+
 def tab():
     # Initializing the complete layout
     tab.layout = QVBoxLayout()
@@ -52,6 +54,7 @@ def tab():
     # These are the buttons for saving and generating new NPCs.
 
     generateButton = QPushButton("Generate")
+    generateButton.clicked.connect(GenerateButtonPressed)
     saveButton = QPushButton("Save")
 
     bottomButtonsLayout = QHBoxLayout()
@@ -62,6 +65,7 @@ def tab():
     # This builds the textbox that you see the resulting character in
 
     mainTextBox = QTextEdit()
+   # mainTextBox.moveCursor(QTextCursor.Start)
     textBoxLayout = QHBoxLayout()
     textBoxLayout.addWidget(mainTextBox)
 
@@ -92,3 +96,6 @@ def tab():
 
     # sends the layout to core.py
     return tab.layout
+
+def GenerateButtonPressed(mainTextBox):
+    mainTextBox.plainText.insertPlainText('cdhcihfif')
