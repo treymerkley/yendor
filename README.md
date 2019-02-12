@@ -6,7 +6,7 @@ Yendor is the for the dungeon master who understands that a role-playing game is
 
 Yendor is in **early** alpha. Expect many features to be missing or nonfunctional. PRs and suggestions are happily accepted!
 
-Yendor is built to accommodate D20, high-fantasy settings, but can be modified to be useful in other settings. Additionally, if any scaling feels broken, let me know.
+Yendor is built to accommodate D20, high-fantasy settings, but can be modified to be useful in other settings. Additionally, if any scaling feels broken, let me know. A big thanks to Robin Stacey, Massimo Baffoni, and everyone who contributed to [Microlite20](https://microlite20.org/), Microlite20 Purest Essence, and Microlite20 Golden Edition, whose minimal D20 rulebooks provide much of the inspiration for this project. 
 
 ## Installation
 
