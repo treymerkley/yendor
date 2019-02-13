@@ -1,4 +1,3 @@
-
 #! /usr/bin/python3
 from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout,
                              QComboBox, QCheckBox, QLabel,
@@ -9,7 +8,7 @@ from ..math import charactergen
 
 def tab():
     # Initializing the complete layout
-    tab.layout = QHBoxLayout()
+    tab.layout = QVBoxLayout()
 
     nameLineEditLabel = QLabel("Name:")
     nameLineEdit = QLineEdit()
@@ -25,19 +24,29 @@ def tab():
         i += 1
 
     # This sets up the elements box
-    elementsComboBoxLabel = QLabel()
-    elementsComboBoxLabel.setText("Element:")
-    elementsComboBox = QComboBox()
-    listOfElements = ('Air', 'Earth', 'Water', 'Fire', 'Forest')
-    elementsComboBox.addItems(listOfElements)
+    sizeComboBoxLabel = QLabel()
+    sizeComboBoxLabel.setText("Size:")
+    sizeComboBox = QComboBox()
+    listOfSizes = ('Fine', 'Diminutive', 'Tiny', 'Small',
+                   'Medium', 'Large', 'Huge', 'Gargantuan',
+                   'Colossal')
+    sizeComboBox.addItems(listOfSizes)
 
     # This sets up the elements box
     skillsComboBoxLabel = QLabel()
     skillsComboBoxLabel.setText("Skills:")
     skillsComboBox = QComboBox()
-    listOfSkills = ('')
+    listOfSkills = ('Babble', 'Blindsense', 'Blindsight', 'Breath Weapon',
+                    'Constrict', 'Create Spawn', 'Damage Reduction',
+                    'Darkvision', 'Enslave', 'Etherealness', 'Fast Healing',
+                    'Firey Aura', 'Flight', 'Improved Grab', 'Incorporeality',
+                    'Invisibility', 'Leader', 'Low-Light Vision', 'Earth Mastery',
+                    'Water Mastery', 'Fire Mastery', 'Air Mastery', 'Mindless',
+                    'Natural Cunning', 'Pounce', 'Powerful Charge', 'Push',
+                    'Rake', 'Regeneration', 'Scent', 'Snatch', 'Stonecunning',
+                    'Swallow Whole', 'Torment', 'Trample', 'Tremorsense')
     skillsComboBox.addItems(listOfSkills)
-    
+
     # This is a toggle modifier to increase the strength of the monster and the
     # loot it's carrying. It's entirely optional and can be removed, or the
     # strength of the modifier can be changed in the "math" folder.
@@ -76,8 +85,8 @@ def tab():
     controlsLayout.addWidget(nameLineEdit)
     controlsLayout.addWidget(skillsComboBoxLabel)
     controlsLayout.addWidget(skillsComboBox)
-    controlsLayout.addWidget(elementsComboBoxLabel)
-    controlsLayout.addWidget(elementsComboBox)
+    controlsLayout.addWidget(sizeComboBoxLabel)
+    controlsLayout.addWidget(sizeComboBox)
     controlsLayout.addWidget(bossCheckBoxLabel)
     controlsLayout.addWidget(bossCheckBox)
 

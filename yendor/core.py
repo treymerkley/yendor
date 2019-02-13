@@ -3,7 +3,7 @@ import sys
 
 from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow,
                              QVBoxLayout, QTabWidget)
-from .gui import npc, places, items, quest
+from .gui import npc, places, items, quest, monsterbuilder
 
 class App(QMainWindow):
 
@@ -36,16 +36,19 @@ class TableWidget(QWidget):
         self.tab2 = QWidget()
         self.tab3 = QWidget()
         self.tab4 = QWidget()
+        self.tab5 = QWidget()
         self.tabs.addTab(self.tab1, "NPCs")
         self.tabs.addTab(self.tab2, "Places")
         self.tabs.addTab(self.tab3, "Items")
         self.tabs.addTab(self.tab4, "Quest")
+        self.tabs.addTab(self.tab5, "Monster Saver")
 
         self.tab1.setLayout(npc.tab())
         self.tab2.setLayout(places.tab())
         self.tab3.setLayout(items.tab())
         self.tab4.setLayout(quest.tab())
-        
+        self.tab5.setLayout(monsterbuilder.tab())
+
         # Add tabs to widget
         self.layout.addWidget(self.tabs)
         self.setLayout(self.layout)
