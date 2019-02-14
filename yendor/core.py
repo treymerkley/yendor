@@ -43,7 +43,8 @@ class TableWidget(QWidget):
         self.tabs.addTab(self.tab4, "Quest")
         self.tabs.addTab(self.tab5, "Monster Saver")
 
-        self.tab1.setLayout(npc.tab())
+        self.npc_object = npc.Tab()
+        self.tab1.setLayout(self.npc_object.layout)
         self.tab2.setLayout(places.tab())
         self.tab3.setLayout(items.tab())
         self.tab4.setLayout(quest.tab())
@@ -59,3 +60,4 @@ def main():
     app = QApplication(sys.argv)
     ex = App()
     sys.exit(app.exec_())
+    
