@@ -63,12 +63,12 @@ class Tab:
 
         self.generateButton = QPushButton("Generate")
         self.generateButton.clicked.connect(self.GenerateButtonPressed)
-        saveButton = QPushButton("Save")
+        self.saveButton = QPushButton("Save")
 
         bottomButtonsLayout = QHBoxLayout()
         bottomButtonsLayout.addStretch(1)
         bottomButtonsLayout.addWidget(self.generateButton)
-        bottomButtonsLayout.addWidget(saveButton)
+        bottomButtonsLayout.addWidget(self.saveButton)
 
         # This builds the textbox that you see the resulting character in
 
@@ -103,4 +103,3 @@ class Tab:
 
     def GenerateButtonPressed(self):
         self.mainTextBox.setPlainText('cdhcihfif')
-

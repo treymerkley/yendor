@@ -45,10 +45,14 @@ class TableWidget(QWidget):
 
         self.npc_object = npc.Tab()
         self.tab1.setLayout(self.npc_object.layout)
-        self.tab2.setLayout(places.tab())
-        self.tab3.setLayout(items.tab())
-        self.tab4.setLayout(quest.tab())
-        self.tab5.setLayout(monsterbuilder.tab())
+        self.places_object = places.Tab()
+        self.tab2.setLayout(self.places_object.layout)
+        self.items_object = items.Tab()
+        self.tab3.setLayout(self.items_object.layout)
+        self.quest_object = quest.Tab()
+        self.tab4.setLayout(self.quest_object.layout)
+        self.monsterbuilder_object = monsterbuilder.Tab()
+        self.tab5.setLayout(self.monsterbuilder_object.layout)
 
         # Add tabs to widget
         self.layout.addWidget(self.tabs)
@@ -60,4 +64,3 @@ def main():
     app = QApplication(sys.argv)
     ex = App()
     sys.exit(app.exec_())
-    
