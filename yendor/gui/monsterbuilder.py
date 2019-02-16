@@ -18,44 +18,45 @@ class Tab:
         nameLineEditLabel = QLabel("Name:")
         self.nameLineEdit = QLineEdit()
 
-        # This sets up the level scaling for the resulting character. The current
-        # cap is at 30, but the algorithm should continue to function to any level.
-        levelComboBoxLabel = QLabel()
-        levelComboBoxLabel.setText("Level:")
+        # This sets up the level scaling for
+        # the resulting character. The current
+        # cap is at 30, but the algorithm should
+        # continue to function to any level.
+        levelComboBoxLabel = QLabel("Level:")
         self.levelComboBox = QComboBox()
         for i in range(1, 31):
             self.levelComboBox.addItem(str(i))
             i += 1
 
         # This sets up the elements box
-        sizeComboBoxLabel = QLabel()
-        sizeComboBoxLabel.setText("Size:")
+        sizeComboBoxLabel = QLabel("Size:")
         self.sizeComboBox = QComboBox()
         listOfSizes = ('Fine', 'Diminutive', 'Tiny', 'Small',
                        'Medium', 'Large', 'Huge', 'Gargantuan',
                        'Colossal')
         self.sizeComboBox.addItems(listOfSizes)
-        
+
         # This sets up the elements box
-        skillsComboBoxLabel = QLabel()
-        skillsComboBoxLabel.setText("Skills:")
+        skillsComboBoxLabel = QLabel("Skills:")
         self.skillsComboBox = QComboBox()
         listOfSkills = ('Babble', 'Blindsense', 'Blindsight', 'Breath Weapon',
                         'Constrict', 'Create Spawn', 'Damage Reduction',
-                        'Darkvision', 'Enslave', 'Etherealness', 'Fast Healing',
-                        'Firey Aura', 'Flight', 'Improved Grab', 'Incorporeality',
-                        'Invisibility', 'Leader', 'Low-Light Vision', 'Earth Mastery',
-                        'Water Mastery', 'Fire Mastery', 'Air Mastery', 'Mindless',
-                        'Natural Cunning', 'Pounce', 'Powerful Charge', 'Push',
-                        'Rake', 'Regeneration', 'Scent', 'Snatch', 'Stonecunning',
-                        'Swallow Whole', 'Torment', 'Trample', 'Tremorsense')
+                        'Darkvision', 'Enslave', 'Etherealness',
+                        'Fast Healing', 'Firey Aura', 'Flight',
+                        'Improved Grab', 'Incorporeality', 'Invisibility',
+                        'Leader', 'Low-Light Vision', 'Earth Mastery',
+                        'Water Mastery', 'Fire Mastery', 'Air Mastery',
+                        'Mindless', 'Natural Cunning', 'Pounce',
+                        'Powerful Charge', 'Push', 'Rake', 'Regeneration',
+                        'Scent', 'Snatch', 'Stonecunning', 'Swallow Whole',
+                        'Torment', 'Trample', 'Tremorsense')
         self.skillsComboBox.addItems(listOfSkills)
 
-        # This is a toggle modifier to increase the strength of the monster and the
-        # loot it's carrying. It's entirely optional and can be removed, or the
+        # This is a toggle modifier to increasethe strength
+        # of the monster and the loot it's carrying. It's
+        # entirely optional and can be removed, or the
         # strength of the modifier can be changed in the "math" folder.
-        bossCheckBoxLabel = QLabel()
-        bossCheckBoxLabel.setText("Boss:")
+        bossCheckBoxLabel = QLabel("Boss:")
         self.bossCheckBox = QCheckBox()
 
         # These are the buttons for saving and generating new NPCs.
@@ -66,7 +67,6 @@ class Tab:
 
         # This builds the textbox that you see the resulting character in
         mainTextBox = QTextEdit()
-        # mainTextBox.moveCursor(QTextCursor.Start)
         textBoxLayout = QHBoxLayout()
         textBoxLabel = QLabel("Description: ")
         textBoxLayout.addWidget(textBoxLabel)

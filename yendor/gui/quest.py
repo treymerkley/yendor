@@ -14,8 +14,7 @@ class Tab:
 
         # The list of plots to choose from. Change the values in the listOfPlot
         # list to get different results on the page.
-        plotComboBoxLabel = QLabel()
-        plotComboBoxLabel.setText("Basic Plot:")
+        plotComboBoxLabel = QLabel("Basic Plot:")
         self.plotComboBox = QComboBox()
         listOfPlot = ('Go kill a monster', 'Go kill a noble', 'Go kill a god',
                       'Bad hombres moved in', 'Bad hombres at the top',
@@ -24,10 +23,10 @@ class Tab:
                       'Go investigate the ostensibly normal place')
         self.plotComboBox.addItems(listOfPlot)
 
-        # This sets up the level scaling for the resulting character. The current
-        # cap is at 30, but the algorithm should continue to function to any level.
-        levelComboBoxLabel = QLabel()
-        levelComboBoxLabel.setText("Level:")
+        # This sets up the level scaling for the
+        # resulting character. The current cap is at 30,
+        # but the algorithm should continue to function to any level.
+        levelComboBoxLabel = QLabel("Level:")
         self.levelComboBox = QComboBox()
         for i in range(1, 31):
             self.levelComboBox.addItem(str(i))

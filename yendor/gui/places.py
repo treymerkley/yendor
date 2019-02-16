@@ -1,3 +1,4 @@
+
 #! /usr/bin/python3
 from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout, QComboBox,
                              QLabel, QPushButton, QTextEdit,
@@ -14,24 +15,21 @@ class Tab:
         # The list of species to choose from.
         # Change the values in the listOfSpecies
         # list to get different results on the page.
-        placesComboBoxLabel = QLabel()
-        placesComboBoxLabel.setText("Places:")
+        placesComboBoxLabel = QLabel("Places:")
         self.placesComboBox = QComboBox()
         listOfPlaces = ('Village', 'City', 'Cave',
                         'Ruins')
         self.placesComboBox.addItems(listOfPlaces)
 
         # This sets up the elements box
-        elementsComboBoxLabel = QLabel()
-        elementsComboBoxLabel.setText("Element:")
+        elementsComboBoxLabel = QLabel("Element:")
         self.elementsComboBox = QComboBox()
         listOfElements = ('Plains', 'Mountain',
                           'Wetland', 'Volcano', 'Forest')
         self.elementsComboBox.addItems(listOfElements)
 
         # Toggle for hostile area
-        hostileCheckBoxLabel = QLabel()
-        hostileCheckBoxLabel.setText("Hostile:")
+        hostileCheckBoxLabel = QLabel("Hostile:")
         self.hostileCheckBox = QCheckBox()
 
         # These are the buttons for saving and generating new NPCs.

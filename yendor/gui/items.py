@@ -10,11 +10,11 @@ class Tab:
     def tab(self):
         # Initializing the complete layout
         self.layout = QVBoxLayout()
-        
-        # The list of items to choose from. Change the values in the listOfItems
+
+        # The list of items to choose from.
+        # Change the values in the listOfItems
         # list to get different results on the page.
-        itemsComboBoxLabel = QLabel()
-        itemsComboBoxLabel.setText("Places:")
+        itemsComboBoxLabel = QLabel("Places:")
         self.itemsComboBox = QComboBox()
         listOfItems = ('Light Weapon', 'One-Handed Weapon', 'Two-Handed Weapon',
                        'Ranged Weapon', 'Light Armor', 'Medium Armor',
@@ -23,15 +23,13 @@ class Tab:
         self.itemsComboBox.addItems(listOfItems)
 
         # This sets up the buffs box
-        buffsComboBoxLabel = QLabel()
-        buffsComboBoxLabel.setText("Buffs:")
+        buffsComboBoxLabel = QLabel("Buffs:")
         self.buffsComboBox = QComboBox()
         listOfBuffs = ('None', 'Low', 'Medium', 'High', 'Legendary')
         self.buffsComboBox.addItems(listOfBuffs)
 
         # This sets up the debuffs box
-        debuffsComboBoxLabel = QLabel()
-        debuffsComboBoxLabel.setText("Debuffs:")
+        debuffsComboBoxLabel = QLabel("Debuffs:")
         self.debuffsComboBox = QComboBox()
         listOfDebuffs = ('None', 'Low', 'Medium', 'High', 'Cursed')
         self.debuffsComboBox.addItems(listOfDebuffs)
@@ -70,4 +68,3 @@ class Tab:
         self.layout.addWidget(controls)
         self.layout.addLayout(textBoxLayout)
         self.layout.addLayout(bottomButtonsLayout)
-

@@ -16,8 +16,7 @@ class Tab:
 
         # The list of species to choose from. Change the values
         # in the listOfSpecies list to get different results on the page.
-        speciesComboBoxLabel = QLabel()
-        speciesComboBoxLabel.setText("Species:")
+        speciesComboBoxLabel = QLabel("Species:")
         self.speciesComboBox = QComboBox()
         listOfSpecies = ('Dragonborn', 'Dwarf', 'Eldarin', 'Elf',
                          'Halfling', 'Human', 'Tiefling', 'Goblin',
@@ -27,8 +26,7 @@ class Tab:
         # This sets up the level scaling for the resulting
         # character. The current cap is at 30, but the
         # algorithm should continue to function to any level.
-        levelComboBoxLabel = QLabel()
-        levelComboBoxLabel.setText("Level:")
+        levelComboBoxLabel = QLabel("Level:")
         self.levelComboBox = QComboBox()
         for i in range(1, 31):
             self.levelComboBox.addItem(str(i))
@@ -38,15 +36,13 @@ class Tab:
         # classes are here now, but to add more, add a comma
         # after the last item and write in whatever you
         # want, as long as it's in single quotes
-        classesComboBoxLabel = QLabel()
-        classesComboBoxLabel.setText("Class:")
+        classesComboBoxLabel = QLabel("Class:")
         self.classesComboBox = QComboBox()
         listOfClasses = ('Fighter', 'Ranger', 'Rogue', 'Mage', 'Cleric')
         self.classesComboBox.addItems(listOfClasses)
 
         # This sets up the elements box
-        elementsComboBoxLabel = QLabel()
-        elementsComboBoxLabel.setText("Element:")
+        elementsComboBoxLabel = QLabel("Element:")
         self.elementsComboBox = QComboBox()
         listOfElements = ('Air', 'Earth', 'Water', 'Fire', 'Forest')
         self.elementsComboBox.addItems(listOfElements)
@@ -55,8 +51,7 @@ class Tab:
         # of the monster and the loot it's carrying. It's
         # entirely optional and can be removed, or the strength
         # of the modifier can be changed in the "math" folder.
-        bossCheckBoxLabel = QLabel()
-        bossCheckBoxLabel.setText("Boss:")
+        bossCheckBoxLabel = QLabel("Boss:")
         self.bossCheckBox = QCheckBox()
 
         # These are the buttons for saving and generating new NPCs.
