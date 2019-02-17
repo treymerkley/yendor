@@ -1,7 +1,8 @@
 #! /usr/bin/python3
 from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout,
                              QComboBox, QCheckBox, QLabel,
-                             QPushButton, QTextEdit, QScrollArea,)
+                             QPushButton, QTextEdit, QScrollArea)
+from PyQt5.QtCore import Qt
 
 from ..math import charactergen
 
@@ -31,6 +32,7 @@ class Tab:
         for i in range(1, 31):
             self.levelComboBox.addItem(str(i))
             i += 1
+       # self.levelComboBox.activated.connect(self.handleActivated)
 
         # This sets up the list of classes. Only four basic
         # classes are here now, but to add more, add a comma
@@ -40,12 +42,14 @@ class Tab:
         self.classesComboBox = QComboBox()
         listOfClasses = ('Fighter', 'Ranger', 'Rogue', 'Mage', 'Cleric')
         self.classesComboBox.addItems(listOfClasses)
+       # self.classesComboBox.activated.connect(self.handleActivated)
 
         # This sets up the elements box
         elementsComboBoxLabel = QLabel("Element:")
         self.elementsComboBox = QComboBox()
         listOfElements = ('Air', 'Earth', 'Water', 'Fire', 'Forest')
         self.elementsComboBox.addItems(listOfElements)
+       # self.elementsComboBox.activated.connect(self.handleActivated)
 
         # This is a toggle modifier to increase the strength
         # of the monster and the loot it's carrying. It's
@@ -97,4 +101,15 @@ class Tab:
         self.layout.addLayout(bottomButtonsLayout)
 
     def GenerateButtonPressed(self):
-        self.mainTextBox.setPlainText('cdhcihfif')
+        levelString = self.levelComboBox.currentText()
+        self.speciesString = self.speciesComboBox.currentText()
+        self.classesString = self.classesComboBox.currentText()
+        self.elementsString = self.elementsComboBox.currentText()
+        if self.bossCheckBox == Qt.Checked:
+            self.bossString = "true"
+        else:
+            self.bossString = "false"
+        resultString = charactergen.generateCharacter()
+        # (self.levelString, self.speciesString,
+        # self.classesString, self.elementsString, self.bossString)
+        self.mainTextBox.setPlainText(resultString)
