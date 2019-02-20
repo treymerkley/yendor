@@ -2,6 +2,6 @@
 from ..gui import npc
 
 def generateCharacter():
-    levelString = npc.levelString
-    myString = levelString
+    localLevelString = npc.localLevelString
+    myString = localLevelString
     return myString

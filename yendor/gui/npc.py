@@ -32,6 +32,7 @@ class Tab:
         for i in range(1, 31):
             self.levelComboBox.addItem(str(i))
             i += 1
+        #levelComboBox.activated[str].connect(self.onActivated)
        # self.levelComboBox.activated.connect(self.handleActivated)
 
         # This sets up the list of classes. Only four basic
@@ -100,8 +101,10 @@ class Tab:
         self.layout.addLayout(textBoxLayout)
         self.layout.addLayout(bottomButtonsLayout)
 
+   # def onActivated(self, text):
+   #     self.localLevelString
     def GenerateButtonPressed(self):
-        levelString = self.levelComboBox.currentText()
+        self.localLevelString = self.levelComboBox.currentText()
         self.speciesString = self.speciesComboBox.currentText()
         self.classesString = self.classesComboBox.currentText()
         self.elementsString = self.elementsComboBox.currentText()
