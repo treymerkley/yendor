@@ -32,6 +32,7 @@ class Tab:
         for i in range(1, 31):
             self.levelComboBox.addItem(str(i))
             i += 1
+        localLevelString = self.levelComboBox.currentText()
         #levelComboBox.activated[str].connect(self.onActivated)
        # self.levelComboBox.activated.connect(self.handleActivated)
 
@@ -112,7 +113,5 @@ class Tab:
             self.bossString = "true"
         else:
             self.bossString = "false"
-        resultString = charactergen.generateCharacter()
-        # (self.levelString, self.speciesString,
-        # self.classesString, self.elementsString, self.bossString)
+        resultString = charactergen.generateCharacter(self)
         self.mainTextBox.setPlainText(resultString)

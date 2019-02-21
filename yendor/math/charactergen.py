@@ -1,7 +1,6 @@
 #! /usr/bin/python3
-from ..gui import npc
 
-def generateCharacter():
-    localLevelString = npc.localLevelString
-    myString = localLevelString
+def generateCharacter(self):
+    level = self.localLevelString
+    myString = level * 2
     return myString
