@@ -6,6 +6,7 @@ from PyQt5.QtCore import Qt
 
 from ..math import charactergen
 
+
 class Tab:
 
     def __init__(self):
@@ -32,9 +33,6 @@ class Tab:
         for i in range(1, 31):
             self.levelComboBox.addItem(str(i))
             i += 1
-        localLevelString = self.levelComboBox.currentText()
-        #levelComboBox.activated[str].connect(self.onActivated)
-       # self.levelComboBox.activated.connect(self.handleActivated)
 
         # This sets up the list of classes. Only four basic
         # classes are here now, but to add more, add a comma
@@ -44,14 +42,14 @@ class Tab:
         self.classesComboBox = QComboBox()
         listOfClasses = ('Fighter', 'Ranger', 'Rogue', 'Mage', 'Cleric')
         self.classesComboBox.addItems(listOfClasses)
-       # self.classesComboBox.activated.connect(self.handleActivated)
+        # self.classesComboBox.activated.connect(self.handleActivated)
 
         # This sets up the elements box
         elementsComboBoxLabel = QLabel("Element:")
         self.elementsComboBox = QComboBox()
         listOfElements = ('Air', 'Earth', 'Water', 'Fire', 'Forest')
         self.elementsComboBox.addItems(listOfElements)
-       # self.elementsComboBox.activated.connect(self.handleActivated)
+        # self.elementsComboBox.activated.connect(self.handleActivated)
 
         # This is a toggle modifier to increase the strength
         # of the monster and the loot it's carrying. It's
@@ -102,8 +100,6 @@ class Tab:
         self.layout.addLayout(textBoxLayout)
         self.layout.addLayout(bottomButtonsLayout)
 
-   # def onActivated(self, text):
-   #     self.localLevelString
     def GenerateButtonPressed(self):
         self.localLevelString = self.levelComboBox.currentText()
         self.speciesString = self.speciesComboBox.currentText()
