@@ -9,17 +9,18 @@ list_of_names = ('Kana', 'Chukma', 'Chito', 'Achukma', 'Allunsi', 'Yukpa',
                  'Ohoyo', 'Kostina', 'Kostini', 'Banna', 'Anli', 'Palli',
                  'Hishi', 'Shikopa', 'Ahpi', 'Onafa', 'Duquesne', 'Draconis',
                  'Zippideedoo', 'Marrrrrr', 'Hector', 'Bing Bong', 'Lavernica',
-                 'Brutalitops')
+                 'Brutalitops', 'Malkavian')
 
 list_of_titles = ('Well-Endowed', 'Champion', 'Great', 'Lazy', 'Brutal',
                   'Monser Slayer', 'Redundant', 'Spare', 'Hero', 'Guy',
                   'Archer', 'Brave', 'Coward', 'Holy', 'Shady', 'Mystic',
-                  '...Something',)
+                  '...Something', 'Dustroyer')
 
 def generateCharacter(self):
     character_name = (random.choice(list_of_names) +
                       ' the ' + random.choice(list_of_titles))
     level = self.localLevelString
+    
     myString = str('Name: ' + character_name + '\n' +
                    'Level: ' + level + '\n')
     return myString
