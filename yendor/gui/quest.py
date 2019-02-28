@@ -13,7 +13,7 @@ class Tab:
         self.tab()
 
     def tab(self):
-        """actual tab layout"""
+        """sets up the actual tab layout"""
         # Initializing the complete layout
         self.layout = QVBoxLayout()
 
