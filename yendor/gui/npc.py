@@ -15,7 +15,6 @@ class Tab:
 
     def __init__(self):
         self.tab()
-        self.generate_button_pressed()
 
     def tab(self):
         """Sets up the tab contents"""
@@ -52,7 +51,8 @@ class Tab:
         # This sets up the elements box
         elements_combo_box_label = QLabel("Element:")
         self.elements_combo_box = QComboBox()
-        list_of_elements = ('Air', 'Earth', 'Water', 'Fire', 'Forest')
+        list_of_elements = ('Neutral', 'Air', 'Earth',
+                            'Water', 'Fire', 'Ice', 'Forest')
         self.elements_combo_box.addItems(list_of_elements)
 
         # This is a toggle modifier to increase the strength
@@ -114,5 +114,5 @@ class Tab:
             self.boss_string = "true"
         else:
             self.boss_string = "false"
-        result_string = charactergen.generate_character(self)
-        self.main_text_box.setPlainText(result_string)
+        self.result_string = charactergen.generate_character(self)
+        self.main_text_box.setPlainText(self.result_string)

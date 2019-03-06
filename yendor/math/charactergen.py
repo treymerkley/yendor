@@ -22,7 +22,10 @@ def generate_character(self):
     character_name = (random.choice(LIST_OF_NAMES) +
                       ' the ' + random.choice(LIST_OF_TITLES))
     level = self.local_level_string
+    species = self.species_string
+    classes = self.classes_string
 
     my_string = str('Name: ' + character_name + '\n' +
-                    'Level: ' + level + '\n')
+                    'Level: ' + level + '\n' +
+                    'Class: ' + classes + '\n')
     return my_string
