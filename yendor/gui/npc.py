@@ -51,8 +51,9 @@ class Tab:
         # This sets up the elements box
         elements_combo_box_label = QLabel("Element:")
         self.elements_combo_box = QComboBox()
-        list_of_elements = ('Neutral', 'Air', 'Earth',
-                            'Water', 'Fire', 'Ice', 'Forest')
+        list_of_elements = ('Neutral', 'Aerial', 'Earthen',
+                            'Aquatic', 'Burning', 'Frozen',
+                            'Botanic', 'Poisonous')
         self.elements_combo_box.addItems(list_of_elements)
 
         # This is a toggle modifier to increase the strength

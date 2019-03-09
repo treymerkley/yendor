@@ -17,6 +17,7 @@ LIST_OF_TITLES = ('Well-Endowed', 'Champion', 'Great', 'Lazy', 'Brutal',
                   'Archer', 'Brave', 'Coward', 'Holy', 'Shady', 'Mystic',
                   '...Something', 'Dustroyer')
 
+
 def generate_character(self):
     """does the actual generation"""
     character_name = (random.choice(LIST_OF_NAMES) +
@@ -24,8 +25,21 @@ def generate_character(self):
     level = self.local_level_string
     species = self.species_string
     classes = self.classes_string
+    element = self.elements_string
+    armor_class = 'foo'
+    hit_points = 'spam'
+    initiative = 'eggs'
+    # spell_resistance = 'foo'
+    # damage_resistance = 'bar'
+    # difficulty_class = 'spam'
 
-    my_string = str('Name: ' + character_name + '\n' +
-                    'Level: ' + level + '\n' +
-                    'Class: ' + classes + '\n')
+    my_string = str(
+        character_name + ', ' +
+        'A level ' + ' ' + level +
+        ' ' + element + ' ' + species +
+        ' ' + classes + '\n' + '\n' +
+        'Armor Class: ' + armor_class + '\n' +
+        'Hit Points: ' + hit_points + '\n' +
+        'Initiative: ' + initiative + '\n'
+    )
     return my_string
