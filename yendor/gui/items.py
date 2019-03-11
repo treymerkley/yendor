@@ -5,6 +5,8 @@
 from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout, QComboBox,
                              QLabel, QPushButton, QTextEdit,
                              QScrollArea)
+
+
 class Tab:
     """Sets up the tab structure"""
 

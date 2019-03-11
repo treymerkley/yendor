@@ -23,23 +23,50 @@ def generate_character(self):
     character_name = (random.choice(LIST_OF_NAMES) +
                       ' the ' + random.choice(LIST_OF_TITLES))
     level = self.local_level_string
+    abilities = {'strength': 0, 'constitution': 0, 'dexterity': 0,
+                 'intelligence': 0, 'wisdom': 0, 'charisma': 0}
+    abilities['strength'] = random.randint(3, 18)
+    abilities['constitution'] = random.randint(3, 18)
+    abilities['dexterity'] = random.randint(3, 18)
+    abilities['intelligence'] = random.randint(3, 18)
+    abilities['wisdom'] = random.randint(3, 18)
+    abilities['charisma'] = random.randint(3, 18)
+    int_level = int(level)
+    bonus_multiplier = int_level // 4
+    if bonus_multiplier == 0:
+        bonus_multiplier += 1
+    bonus_multiplier *= 2
+    while bonus_multiplier != 0:
+        random_ability = random.choice(
+            list(abilities.values()))
+        random_ability += 1
+        bonus_multiplier -= 1
+
+    mod_strength = (abilities['strength'] - 10) // 2
+    mod_constitution = (abilities['constitution'] - 10) // 2
+    mod_dexterity = (abilities['dexterity'] - 10) // 2
+    mod_intelligence = (abilities['intelligence'] - 10) // 2
+    mod_wisdom = (abilities['wisdom'] - 10) // 2
+    mod_charisma = (abilities['charisma'] - 10) // 2
+
     species = self.species_string
     classes = self.classes_string
     element = self.elements_string
-    armor_class = 'foo'
-    hit_points = 'spam'
-    initiative = 'eggs'
+    base_armor_class = 10 + mod_dexterity
+    hit_points = (15 + mod_constitution)
+    # until a table of species to hit points is made
+    initiative = random.randint(1, 20)
     # spell_resistance = 'foo'
     # damage_resistance = 'bar'
     # difficulty_class = 'spam'
 
     my_string = str(
         character_name + ', ' +
-        'A level ' + ' ' + level +
-        ' ' + element + ' ' + species +
+        'A level ' + ' ' + str(level) +
+        ' ' + element + ' ' + str(species) +
         ' ' + classes + '\n' + '\n' +
-        'Armor Class: ' + armor_class + '\n' +
-        'Hit Points: ' + hit_points + '\n' +
-        'Initiative: ' + initiative + '\n'
+        'Base Armor Class: ' + str(base_armor_class) + '\n' +
+        'Hit Points: ' + str(hit_points) + '\n' +
+        'Initiative: ' + str(initiative) + '\n'
     )
     return my_string
