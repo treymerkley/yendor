@@ -82,26 +82,26 @@ class Tab:
 
         # This creates the layout for the controls. Any new fields should
         # follow this same general convention.
-        controls = QScrollArea()
-        controls.setFixedHeight(100)
-        controls.setWidgetResizable(False)
-        controls_layout = QHBoxLayout(controls)
+        self.controls = QScrollArea()
+        self.controls.setFixedHeight(100)
+        self.controls.setWidgetResizable(False)
+        self.controls_layout = QHBoxLayout(self.controls)
 
-        controls.setWidget(controls_layout.widget())
+        self.controls.setWidget(self.controls_layout.widget())
 
-        controls_layout.addWidget(level_combo_box_label)
-        controls_layout.addWidget(self.level_combo_box)
-        controls_layout.addWidget(species_combo_box_label)
-        controls_layout.addWidget(self.species_combo_box)
-        controls_layout.addWidget(classes_combo_box_label)
-        controls_layout.addWidget(self.classes_combo_box)
-        controls_layout.addWidget(elements_combo_box_label)
-        controls_layout.addWidget(self.elements_combo_box)
-        controls_layout.addWidget(boss_check_box_label)
-        controls_layout.addWidget(self.boss_check_box)
+        self.controls_layout.addWidget(level_combo_box_label)
+        self.controls_layout.addWidget(self.level_combo_box)
+        self.controls_layout.addWidget(species_combo_box_label)
+        self.controls_layout.addWidget(self.species_combo_box)
+        self.controls_layout.addWidget(classes_combo_box_label)
+        self.controls_layout.addWidget(self.classes_combo_box)
+        self.controls_layout.addWidget(elements_combo_box_label)
+        self.controls_layout.addWidget(self.elements_combo_box)
+        self.controls_layout.addWidget(boss_check_box_label)
+        self.controls_layout.addWidget(self.boss_check_box)
 
         # Adds all of the disparate groups of controls to the total layout
-        self.layout.addWidget(controls)
+        self.layout.addWidget(self.controls)
         self.layout.addLayout(text_box_layout)
         self.layout.addLayout(bottom_buttons_layout)
 
