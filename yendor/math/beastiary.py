@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 """defines the beastiary. It uses the ruleset provided in Microlite20
 Golden Edition. Modify as needed to balance."""
-beastiary = {
+BEASTIARY = {
     # 'Aboleth':
     # {
     #     'STR': '16',
@@ -150,5 +150,160 @@ beastiary = {
         parent races. They tend toward a chaotic outlook drawing strength of
         character from the inequities they face. Half-orcs rarely have strong
         religious views."""
+    },
+    'Half-Elf':
+    {
+        'strength_bonus': '0',
+        'dexterity_bonus': '1',
+        'mind_bonus': '1',
+        'charisma_bonus': '0',
+        'Qualities': """+1 Comm.
+        Move 30’/per round or 20’/round in heavy armor.
+        +1 to any 2 Skills.
+        Immunity to magic sleep effects.
+        Low-Light Vision.
+        +1 racial bonus on Listen, Search, and Spot checks.
+        +1 racial bonus to your Will defense.
+        +2 racial bonus on Diplomacy and Gather Information checks.""",
+        'Description': """In them humans see the grace, the fair face and the
+        pointy ears of elves while these see the opposite. A half-elf’s skin is
+        pale  and  their  eyes  have  the  bright  green  or  blue  hue common
+        to elves. They have the curiosity and the ambitions of humans and the
+        sense for magic and love for nature of elves. """
+    },
+    'Mul (Half-Dwarf)':
+    {
+        'strength_bonus': '2',
+        'dexterity_bonus': '0',
+        'mind_bonus': '-1',
+        'charisma_bonus': '-1',
+        'Qualities': """+1 Physic.
+        Move 30’/per round.
+        Muls may be any chaotic alignment.
+        Darkvision.
+        +2 racial bonus on Intimidate checks.
+        Muls are able to work longer and harder without rest than most other
+        races. Regardless of the preceding type of exertion, eight hours of
+        sleep will let a Mul become fully rested,
+        ready to begin work again. """,
+        'Description': """They  retain  the  height  and  cunning  of  humans,
+        plus  the durability, raw strength and constitution of dwarves. Born
+        usually as slaves, they can perform heavy work for days and have gruff
+        personality and violent reactions. Fair skinned, they  have
+        pale-colored  eyes,  no  hair  or  beard.  Muls are sterile."""
+    },
+    'Tiefling':
+    {
+        'strength_bonus': '0',
+        'dexterity_bonus': '2',
+        'mind_bonus': '1',
+        'charisma_bonus': '-2',
+        'Qualities': """Move 30’/per round or 20’/round in heavy armor.
+        +2 racial bonus on Bluff and Hide checks.
+        Darkvision out to 60 feet.
+        Resistance to cold 5, electricity 5, and fire 5.
+        Darkness: can use Darkness  spell once per day.""",
+        'Description': """Their lineage can be traced back to to a fiend or
+        demon. Tiefl ings have any of a number of features that reference
+        (directly or indirectly) their fi endish lineage of humans and the
+        sense for magic and love for nature of including horns of various
+        styles, pointed teeth, hooves, tails, and unusually colored eyes. They
+        are not necessarily evil, but usually sneaky and subtle."""
+    },
+    'Half-Fiend':
+    {
+        'strength_bonus': '-1',
+        'dexterity_bonus': '-1',
+        'mind_bonus': '3',
+        'charisma_bonus': '-2',
+        'Qualities': """Move 30’/per round or 20’/round in heavy armor.
+        Darkvision out to 60 feet.
+        Immunity to poison.• Resistance to acid 10, cold 10, electricity 10,
+        and fire 10.
+        Darkness: can use Darkness  spell once per day.
+        Non-good alignment.
+        Natural Weapons: claw (1d4) and bite (1d6)
+        Bat wings:  can fl y at the base creature’s base land speed. """,
+        'Description': """They born from fiends who have mated with a human.
+        Often grotesque mockeries of humans, rarely one learns from and takes
+        on characteristics of its non-fi endish parents, turning from its evil
+        heritage. Never truly fi tting into society, half-fi ends are usually
+        loners. They are outcasts, hated corrupters of the natural order."""
+    },
+    'Drow':
+    {
+        'strength_bonus': '-2',
+        'dexterity_bonus': '2',
+        'mind_bonus': '2',
+        'charisma_bonus': '0',
+        'Qualities': """Move 30’/per round or 20’/round in heavy armor.
+        Immunity to magic sleep effects.
+        +2 racial on Will saving throws against enchantment spells or effects.
+        Darkvision out to 120 feet.
+        +2 on Listen, Search, and Spot checks. A drow who  passes within 5 feet
+        of a secret or concealed door can to a Search check to notice it as if
+        she were actively looking for it.
+        Spell-Like Abilities once per day: Dancing Lights, Darkness, Faerie
+        Fire.
+        Light Blindness: Abrupt exposure to bright light blinds drow for 1
+        round. On subsequent rounds, they are dazzled as long as they remain in
+        the affected area.""",
+        'Description': """Drows are black-skinned and pale haired relatives of
+        elves, with sharp features, large eyes and pointed ears. Drows are
+        silent and swift, highly resistant to magic and capable to use some
+        innate magical abilities even if not spellcasters. They are  described
+        as  chaotic  or  evil  in  alignment,  and  highly intelligent."""
+    },
+    'Minotaur':
+    {
+        'strength_bonus': '2',
+        'dexterity_bonus': '0',
+        'mind_bonus': '-2',
+        'charisma_bonus': '0',
+        'Qualities': """+1 Physic
+        Move 30’/per round.
+        Large size: 1 to AC, 1 on attack rolls, 4 on Hide checks, +4 on grapple
+        checks, double lifting and carrying limits.
+        Darkvision: 60 feet.
+        +2 racial bonus on Search, Spot, and Listen checks.
+        +3 natural armor bonus.
+        Natural  Weapon:  Gore  (1d6+STR  bonus  if  first  attack,  1d6  if
+        used  as secondary).
+        Powerful Charge: in addition to the normal benefits/hazards of a
+        charge, allows the minotaur to make a single gore attack dealing
+        4d6 + STR bonus damages.
+        Natural Cunning.
+        Immune to Maze spell.
+        Scent
+        -2 on Balance, Escape Artist and Tumble skill checks.""",
+        'Description': """Their bodies (around 7ft tall) are humanoid and
+        covered in short fur, but their heads are bovine and their back legs
+        end in cloven hooves. They are proud, noble, tenacious and bold, deeply
+        spiritual and respectful of their elders. Generally kind and
+        benevolent, they become furious, savage and brutal in combat."""
+    },
+    'Half-Giant':
+    {
+        'strength_bonus': '2',
+        'dexterity_bonus': '0',
+        'mind_bonus': '2',
+        'charisma_bonus': '0',
+        'Qualities': """+2 Physic
+        Move 30’/per round.
+        Large size: –1 to AC, –1 on attack rolls, 4 on Hide checks, +4 on
+        grapple checks, double lifting and carrying limits.
+        Giant: not subject to spells or effects that affect only humanoids
+        (charm person or dominate person).
+        Low-Light Vision.
+        +2 racial bonus on saving throws against all fire spells and effects.
+        Spell-Like  Abilities  once  per  day:  Stomp  -  his  foot  stomp,
+        precipitating  a psychokinetic shock wave that travels along the ground,
+        topples creatures (they become prone and take 1d4 non-lethal damages)
+        and loose objects. Save DC is 10+half-giant STR modifier.""",
+        'Description': """A cross between humans and giants (7/8 ft tall, weigh
+        250/400  pounds)  usually  held  captive  as  warriors and laborers. As
+        a result, nothing is more important to them than their freedom. Like
+        humans they are curious, cooperative and communicative, with a general
+        tendency toward kindness. They disdain religion. """
     },
 }
