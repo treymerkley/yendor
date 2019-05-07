@@ -35,19 +35,19 @@ def generate_character(self):
     bonus_multiplier = int_level // 4
     if bonus_multiplier == 0:
         bonus_multiplier += 1
-    bonus_multiplier *= 2
-    while bonus_multiplier != 0:
+    random_count = bonus_multiplier * 2
+    while random_count != 0:
         random_ability = random.choice(
             list(abilities.values()))
         random_ability += 1
-        bonus_multiplier -= 1
+        random_count -= 1
 
-    mod_strength = (abilities['strength'] - 10) // 2
-    mod_constitution = (abilities['constitution'] - 10) // 2
-    mod_dexterity = (abilities['dexterity'] - 10) // 2
-    mod_intelligence = (abilities['intelligence'] - 10) // 2
-    mod_wisdom = (abilities['wisdom'] - 10) // 2
-    mod_charisma = (abilities['charisma'] - 10) // 2
+    mod_strength = (abilities['strength'] * bonus_multiplier - 10) // 2
+    mod_constitution = ((abilities['constitution'] * bonus_multiplier - 10)) // 2
+    mod_dexterity = (abilities['dexterity'] * bonus_multiplier - 10) // 2
+    mod_intelligence = (abilities['intelligence'] * bonus_multiplier - 10) // 2
+    mod_wisdom = (abilities['wisdom'] * bonus_multiplier - 10) // 2
+    mod_charisma = (abilities['charisma'] * bonus_multiplier - 10) // 2
 
     species = self.species_string
     classes = self.classes_string
