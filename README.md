@@ -1,3 +1,5 @@
+NOTE: I don't really play D&D much anymore, so it's kind of hard to maintain this without any basepoint. If someone wants me to start working on it again or wants to work on it themselves, let me know. In the meantime I'll keep it up as an archive until I decide to touch it again, if I ever do.
+
 
 # Yendor
 ## An automatic, hackable dungeon master assistant
