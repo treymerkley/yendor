@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import (QHBoxLayout, QVBoxLayout,
                              QPushButton, QTextEdit, QScrollArea)
 from PyQt5.QtCore import Qt
 
-from ..math import charactergen, beastiary
+from ..math import charactergen
 
 
 class Tab:
@@ -25,8 +25,10 @@ class Tab:
         # in the listOfSpecies list to get different results on the page.
         species_combo_box_label = QLabel("Species:")
         self.species_combo_box = QComboBox()
-        for key in beastiary.BEASTIARY:
-            self.species_combo_box.addItem(key)
+        list_of_species = ('Dragonborn', 'Dwarf', 'Eldarin', 'Elf',
+                           'Halfling', 'Human', 'Tiefling', 'Goblin',
+                           'Slime', 'Random Appropriate Monster')
+        self.species_combo_box.addItems(list_of_species)
 
         # This sets up the level scaling for the resulting
         # character. The current cap is at 30, but the
