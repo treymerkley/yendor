@@ -24,7 +24,6 @@ BEASTIARY = {
         'Details': """incorporeal touch +3 (1d4 perm. MIND);
         babble, madness; undead, incorporeal, +2 turn resistance"""
     },
-
     "Ani. Object, Small": {
         'AC': '14',
         'HD': '1d10',

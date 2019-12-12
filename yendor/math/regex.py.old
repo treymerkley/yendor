@@ -1,0 +1,72 @@
+import pyparsing
+#Construct the expressions
+#Beast's name
+name=pyparsing.Word(pyparsing.alphas+' ,.-').setResultsName(
+    'NAME').setParseAction(lambda s:s[0].strip())
+#Beast's AC
+ac=pyparsing.Word(pyparsing.nums).setResultsName(
+    'AC').setParseAction(lambda s:s[0].strip())
+#Beast's HD
+hd=pyparsing.Word(pyparsing.alphanums+'+').setResultsName(
+    'HD').setParseAction(lambda s:s[0].strip())
+#Beast's HP
+hp=pyparsing.Word(pyparsing.nums).setResultsName(
+    'HP').setParseAction(lambda s:s[0].strip())
+#Beast's initiative
+init=pyparsing.Word(pyparsing.nums+'+-').setResultsName(
+    'INIT').setParseAction(lambda s:s[0].strip())
+#Beast's "extra data"
+data=pyparsing.restOfLine.setResultsName(
+    'DATA').setParseAction(lambda s:s[0].strip())
+#Combine them all into the full expression
+expression=name+ac+hd+hp+init+data
+
+f=open('fixable.txt','r')
+results=[]
+#Run through every line in the file
+for line in f.readlines():
+    #If it's empty or just whitespace, skip
+    if not line or line.isspace():
+        continue
+    # Parse the string (:pyparsing.ParseResults just tells the
+    # IDE it's supposed to be a ParseResults type, for intellisense)
+    res:pyparsing.ParseResults=expression.searchString(line)
+    # If there was not a parsed result (you could throw
+    # an error here or output the not parsed lines)
+    if not res or res is None:
+        continue
+    #Convert the result to a dict
+    res=res[0].asDict()
+    #print(res,end='\n\n')
+    results.append(res)
+#Sort the results  by name
+# results.sort(key=lambda i:i['NAME'])
+#Dump the results to a json file
+#json.dump(results,open('bestiary.json','w'),indent=4)
+w = open('fixable_fixed.txt', 'w')
+# text = str(results)
+# w.write(str(results))
+for res in results:
+        #Print all the details
+    name = (f'\"{res.get("NAME",None)}\": {{')
+    w.write(name)
+    w.write("\n")
+    ac = (f'\'AC\': \'{res.get("AC",None)}\',')
+    w.write(ac)
+    w.write("\n")
+    hd = (f'\'HD\': \'{res.get("HD",None)}\',')
+    w.write(hd)
+    w.write("\n")
+    hp = (f'\'HP\': \'{res.get("HP",None)}\',')
+    w.write(hp)
+    w.write("\n")
+    init = (f'\'Init\': \'{res.get("INIT",None)}\',')
+    w.write(init)
+    w.write("\n")
+    data = (f'\'Details\': \"\"\"{res.get("DATA",None)}\"\"\"')
+    w.write(data)
+    w.write("\n")
+    w.write('},')
+    #Print extra newline
+    w.write("\n")
+w.close()
